@@ -1,15 +1,14 @@
 {
-  "name": "twd",
-  "version": "1.3.0",
-  "description": "(Browser-)Chrome-less TweetDeck",
+  "name": "slk",
+  "version": "0.0.1",
+  "description": "(Browser-)Chrome-less Slack",
   "keywords": [
     "node-webkit",
-    "tweetdeck",
-    "twitter",
+    "slack",
     "app"
   ],
-  "homepage": "https://github.com/passcod/twd",
-  "author": "Félix Saparelli <https://passcod.name>",
+  "homepage": "https://github.com/drikin/slk",
+  "author": "Koh Aoki <http://blog.drikin.com>",
   "contributors": [
     {
       "name": "Félix Saparelli",
@@ -30,22 +29,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/passcod/twd.git"
+    "url": "https://github.com/drikin/slk.git"
   },
   "engines": {
     "node-webkit": ">=0.10.0"
   },
-  "main": "app://twd/index.html",
+  "main": "app://slk/index.html",
   "nodejs": true,
   "single-instance": true,
   "user-agent": "Mozilla/5.0 (%osinfo) WebKit/%webkit_ver NodeWebkit/%nwver twd/%version",
   "window": {
     "icon": "icon.png",
-    "toolbar": false,
+    "toolbar": true,
     "height": 700,
     "width": 900,
     "min_width": 370,
-    "title": "TweetDeck",
+    "title": "Slack",
     "position": "centre",
     "resizable": true
   }
