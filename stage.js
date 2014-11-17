@@ -15,5 +15,6 @@
   win.on('document-end', function() {
     var iframe = window.frames["main"];
     $(iframe.contentDocument.head).contents().append("<style>.message{font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, sans-serif !important;}</style>");
+    $(iframe.contentDocument.head).contents().append("<style>#message-input{font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, sans-serif !important;}</style>");
   });
 }).apply(this);
