@@ -17,3 +17,6 @@
     $(iframe.contentDocument.head).contents().append("<style>#message-input, .message{font-family:'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, sans-serif !important;}</style>");
   });
 }).apply(this);
+
+Notification = function(title, options) {
+}
