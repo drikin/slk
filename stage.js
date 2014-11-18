@@ -15,8 +15,8 @@
   win.on('document-end', function() {
     var iframe = window.frames["main"];
     $(iframe.contentDocument.head).contents().append("<style>#message-input, .message{font-family:'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, sans-serif !important;}</style>");
+
+    // FIXME: forcefully disable Notification for avoiding crash
+    iframe.contentWindow.Notification = function() {};
   });
 }).apply(this);
-
-Notification = function(title, options) {
-}
