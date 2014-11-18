@@ -35,7 +35,9 @@
     "node-webkit": ">=0.10.0"
   },
   "main": "app://slk/index.html",
+  "chromium-args": "--disable-3d-apis --disable-extensions --disable-flash-3d --disable-java --disable-webgl --no-sandbox --disable-gpu-sandbox",
   "nodejs": true,
+  "js-flags": "--harmony_proxies --harmony_collections",
   "single-instance": true,
   "user-agent": "Mozilla/5.0 (%osinfo) WebKit/%webkit_ver NodeWebkit/%nwver twd/%version",
   "window": {
