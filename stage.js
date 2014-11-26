@@ -17,6 +17,19 @@
     $(iframe.contentDocument.head).contents().append("<style>#message-input, .message{font-family:'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, sans-serif !important;}</style>");
 
     // FIXME: forcefully disable Notification for avoiding crash
-    iframe.contentWindow.Notification = function() {};
+    window.Notification = iframe.contentWindow.Notification = function(title, options) {
+        this.title = title;
+        this.options = options;
+
+        return {
+            "show": function() { console.log(title, options); },
+            "permission": "granted",
+            "close": function() { console.log("close", title); }
+        }
+    };
+    window.Notification.requestPermission = function(callback) {
+        console.log('requestPermission');
+        callback("granted");
+    }
   });
 }).apply(this);
