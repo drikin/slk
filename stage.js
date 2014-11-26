@@ -16,20 +16,24 @@
     var iframe = window.frames["main"];
     $(iframe.contentDocument.head).contents().append("<style>#message-input, .message{font-family:'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, sans-serif !important;}</style>");
 
-    // FIXME: forcefully disable Notification for avoiding crash
-    window.Notification = iframe.contentWindow.Notification = function(title, options) {
-        this.title = title;
-        this.options = options;
+    // notification badge
+    var enableNotification = true;
+    var badgeLabelNumber = 0;
 
-        return {
-            "show": function() { console.log(title, options); },
-            "permission": "granted",
-            "close": function() { console.log("close", title); }
-        }
-    };
-    window.Notification.requestPermission = function(callback) {
-        console.log('requestPermission');
-        callback("granted");
+    var mi = iframe.contentDocument.getElementById('message-input');
+    if (mi) {
+      mi.onkeydown = function(){
+        badgeLabelNumber = 0;
+        win.setBadgeLabel('');
+      }
+    }
+    var iwindow = iframe.contentWindow;
+    Notification = iwindow. Notification.prototype.show = function(title, option) {
+      if (enableNotification) {
+        win.setBadgeLabel(++badgeLabelNumber);
+      }
+    }
+    Notification = iwindow. Notification.prototype.close = function(title, option) {
     }
   });
 }).apply(this);
