@@ -33,7 +33,5 @@
         win.setBadgeLabel(++badgeLabelNumber);
       }
     }
-    Notification = iwindow. Notification.prototype.close = function(title, option) {
-    }
   });
 }).apply(this);
