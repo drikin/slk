@@ -5,3 +5,5 @@ node_modules
 *.nw
 /build
 Thumbs.db
+cache/
+dist/
