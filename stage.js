@@ -14,7 +14,7 @@
   // FIXME: very hacky way to forcefully update font-family
   win.on('document-end', function() {
     var iframe = window.frames["main"];
-    $(iframe.contentDocument.head).contents().append("<style>#message-input, .message{font-family:'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, sans-serif !important;}</style>");
+    $(iframe.contentDocument.head).contents().append("<style>#msg_text, #message-input, .message{font-family:'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, sans-serif !important;}</style>");
 
     // notification badge
     var enableNotification = true;
@@ -28,7 +28,7 @@
       }
     }
     var iwindow = iframe.contentWindow;
-    Notification = iwindow. Notification.prototype.show = function(title, option) {
+    iwindow.Notification.prototype.show = function(title, option) {
       if (enableNotification) {
         win.setBadgeLabel(++badgeLabelNumber);
       }
