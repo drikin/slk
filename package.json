@@ -1,0 +1,14 @@
+{
+  "name": "slk",
+  "description": "_Slack wrapper for use as desktop app._",
+  "devDependencies": {
+    "node-webkit-builder": "^0.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drikin/slk.git"
+  },
+  "scripts": {"start": "node build.js"},
+  "author": "drikin",
+  "homepage": "https://github.com/drikin/slk"
+}
