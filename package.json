@@ -42,7 +42,7 @@
   "user-agent": "Mozilla/5.0 (%osinfo) WebKit/%webkit_ver NodeWebkit/%nwver twd/%version",
   "window": {
     "icon": "icon.png",
-    "toolbar": true,
+    "toolbar": false,
     "height": 700,
     "width": 900,
     "min_width": 370,
