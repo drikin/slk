@@ -5,10 +5,10 @@
   var argv = require('minimist')(gui.App.argv);
   var iframe = window.frames["main"];
 
-  // forward to init channel
-  if (argv.channel && typeof argv.channel === 'string') {
-    var channel = argv.channel;
-    iframe.src = 'https://' + channel + '.slack.com';
+  // forward to init team
+  if (argv.team && typeof argv.team === 'string') {
+    var team = argv.team;
+    iframe.src = 'https://' + team + '.slack.com';
   }
 
   // Get the current window
