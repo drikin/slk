@@ -2,6 +2,15 @@
   var $ = require('jquery');
   var gui = require('nw.gui');
 
+  var argv = require('minimist')(gui.App.argv);
+  var iframe = window.frames["main"];
+
+  // forward to init channel
+  if (argv.channel && typeof argv.channel === 'string') {
+    var channel = argv.channel;
+    iframe.src = 'https://' + channel + '.slack.com';
+  }
+
   // Get the current window
   var win = gui.Window.get();
 
@@ -13,7 +22,6 @@
 
   // FIXME: very hacky way to forcefully update font-family
   win.on('document-end', function() {
-    var iframe = window.frames["main"];
     $(iframe.contentDocument.head).contents().append("<style>#msg_text, #message-input, .message{font-family:'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, sans-serif !important;}</style>");
 
     // notification badge
