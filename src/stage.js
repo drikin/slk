@@ -2,17 +2,21 @@
   var $ = require('jquery');
   var gui = require('nw.gui');
 
+  // Get the current window
+  var win = gui.Window.get();
+
   var argv = require('minimist')(gui.App.argv);
   var iframe = window.frames["main"];
+  var iwindow = iframe.contentWindow;
 
   // forward to init team
   if (argv.team && typeof argv.team === 'string') {
     var team = argv.team;
     iframe.src = 'https://' + team + '.slack.com';
   }
-
-  // Get the current window
-  var win = gui.Window.get();
+  if (argv.zoom && typeof argv.zoom === 'number') {
+    win.zoomLevel = argv.zoom;
+  }
 
   win.on('new-win-policy', function(frame, url, policy) {
     policy.ignore();
@@ -35,7 +39,6 @@
         win.setBadgeLabel('');
       }
     }
-    var iwindow = iframe.contentWindow;
     iwindow. Notification.prototype.show = function(title, option) {
       if (enableNotification) {
         win.setBadgeLabel(++badgeLabelNumber);
