@@ -48,7 +48,8 @@
     "min_width": 370,
     "title": "Slack",
     "position": "centre",
-    "resizable": true
+    "resizable": true,
+    "show": false
   },
   "dependencies": {
     "jquery": "^2.1.1"
