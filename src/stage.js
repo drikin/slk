@@ -18,6 +18,11 @@
     win.zoomLevel = argv.zoom;
   }
 
+  // open web inspector if it's debug mode
+  if (argv.debug) {
+    win.showDevTools();
+  }
+
   win.on('new-win-policy', function(frame, url, policy) {
     policy.ignore();
     gui.Shell.openExternal(url);
