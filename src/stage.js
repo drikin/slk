@@ -44,7 +44,7 @@
         win.setBadgeLabel('');
       }
     }
-    iwindow. Notification.prototype.show = function(title, option) {
+    iwindow.Notification.prototype.show = function(title, option) {
       if (enableNotification) {
         win.setBadgeLabel(++badgeLabelNumber);
       }
