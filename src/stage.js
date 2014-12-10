@@ -2,6 +2,9 @@
   var $ = require('jquery');
   var gui = require('nw.gui');
 
+  // Register is required for Notification on Win8
+  gui.App.createShortcut(process.env.APPDATA + "\\Microsoft\\Windows\\Start Menu\\Programs\\node-webkit.lnk");
+
   // Get the current window
   var win = gui.Window.get();
 
@@ -45,6 +48,9 @@
       }
     }
     iwindow.Notification.prototype.show = function(title, option) {
+      this.onclick = function() {
+        win.focus();
+      }
       if (enableNotification) {
         win.setBadgeLabel(++badgeLabelNumber);
       }
