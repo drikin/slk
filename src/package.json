@@ -39,7 +39,7 @@
   "nodejs": true,
   "js-flags": "--harmony_proxies --harmony_collections",
   "single-instance": false,
-  "user-agent": "Mozilla/5.0 (%osinfo) WebKit/%webkit_ver NodeWebkit/%nwver twd/%version",
+  "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.78.2 (KHTML, like Gecko) Slack_SSB/1.0.2",
   "window": {
     "icon": "icon.png",
     "toolbar": false,
