@@ -49,7 +49,7 @@
     "title": "Slack",
     "position": "centre",
     "resizable": true,
-    "show": false
+    "show": true
   },
   "dependencies": {
     "jquery": "^2.1.1"
